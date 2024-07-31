@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+p {
+  text-align: left;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: cover;
+  border: 1px solid lightgray;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.size {
+  font-size: 50px;
+}
+
+.page-wrapper {
+  margin-top: 1rem;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+  width: 95%;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.flex-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5rem;
+  padding-right: 5rem;
+  background-color: #e0e0e0;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+}
+
+.gridcontainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-grow: 1; /* Allow the grid container to grow and fill the remaining space */
+  grid-auto-rows: auto;
+  gap: 50px;
+  padding: 1rem 5rem; /* Adjust padding as needed */
+  text-align: center;
+}
+
+.grid-item-1 {
+  grid-column: 1 / span 3;
+  text-align: center;
+}
+
+.grid-item-2,
+.grid-item-3,
+.grid-item-4 {
+  grid-column: span 1;
+  justify-content: center;
+}
+
+.image-wrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.tree {
+  min-width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.flex-name {
+  padding: 1rem 0 1rem;
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  font-weight: bold;
+  align-items: center;
+}
+
+.name {
+  padding-left: 3rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .gridcontainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 3rem;
+  }
+  .grid-item-4 {
+    grid-column: 1 / span 1;
+  }
+
+  .flex-name {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gridcontainer {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .flex-header {
+    justify-content: center;
+  }
+  .content {
+    display: none;
+  }
+
+  .flex-name {
+    flex-direction: column;
+  }
+
+  .name {
+    padding-top: 1rem;
+    padding-left: 0;
+  }
+
+  .grid-item-2,
+  .grid-item-3,
+  .grid-item-4 {
+    width: 70%;
+  }
+}
